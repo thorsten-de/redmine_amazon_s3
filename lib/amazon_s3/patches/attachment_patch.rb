@@ -16,6 +16,7 @@ module AmazonS3
         before_destroy   :delete_from_s3
 
         def readable?
+          return true
           Connection.object(disk_filename_s3).exists?
         end
 
